@@ -4,21 +4,13 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.RoundRectangle2D;
 
-/**
- * Blood Bank Management System
- * A clean, single-file Swing desktop UI covering login, account creation,
- * donor registration, receiver requests, hospital/blood-bank search and
- * a simple profile screen.
- */
+
 public class BloodBankSystem extends JFrame {
 
-    // ---- Navigation ----------------------------------------------------
     JPanel mainPanel;
     CardLayout cardLayout;
 
-    // ---- Palette ---------------------------------------------------------
-    // One primary accent (RED) does most of the work; DARK_RED is reserved
-    // for hover/pressed states, DARK for body text, LIGHT_RED for canvas.
+   
     static final Color RED       = new Color(178, 34, 52);
     static final Color DARK_RED  = new Color(140, 24, 40);
     static final Color LIGHT_RED = new Color(250, 236, 238);
@@ -58,9 +50,8 @@ public class BloodBankSystem extends JFrame {
         cardLayout.show(mainPanel, "login");
     }
 
-    // =========================================================
+   
     // LOGIN PAGE
-    // =========================================================
 
     private JPanel loginPage() {
 
@@ -147,9 +138,7 @@ public class BloodBankSystem extends JFrame {
         return panel;
     }
 
-    // =========================================================
     // CREATE ACCOUNT PAGE
-    // =========================================================
 
     private JPanel createAccountPage() {
 
@@ -207,9 +196,7 @@ public class BloodBankSystem extends JFrame {
         return panel;
     }
 
-    // =========================================================
     // HOME PAGE
-    // =========================================================
 
     private JPanel homePage() {
 
@@ -252,9 +239,7 @@ public class BloodBankSystem extends JFrame {
         return panel;
     }
 
-    // =========================================================
     // DONOR PAGE
-    // =========================================================
 
     private JPanel donorPage() {
 
@@ -310,9 +295,7 @@ public class BloodBankSystem extends JFrame {
         return panel;
     }
 
-    // =========================================================
     // RECEIVER PAGE
-    // =========================================================
 
     private JPanel receiverPage() {
 
@@ -364,9 +347,7 @@ public class BloodBankSystem extends JFrame {
         return panel;
     }
 
-    // =========================================================
     // HOSPITAL PAGE
-    // =========================================================
 
     private JPanel hospitalPage() {
 
@@ -418,9 +399,7 @@ public class BloodBankSystem extends JFrame {
         return panel;
     }
 
-    // =========================================================
     // PROFILE PAGE
-    // =========================================================
 
     private JPanel profilePage() {
 
@@ -495,11 +474,7 @@ public class BloodBankSystem extends JFrame {
         return panel;
     }
 
-    // =========================================================
-    // SHARED UI HELPERS
-    // =========================================================
-
-    /** Page header banner used on every non-login screen. */
+    
     private JPanel header(String title) {
 
         JPanel panel = new JPanel(new BorderLayout());
@@ -595,11 +570,7 @@ public class BloodBankSystem extends JFrame {
                 JOptionPane.PLAIN_MESSAGE);
     }
 
-    // =========================================================
-    // ROUNDED BUTTON (primary / outline)
-    // =========================================================
-
-    /** Flat, rounded button with a hover/press state. Two styles: filled (primary) or outline. */
+   
     static class RoundedButton extends JButton {
 
         private final boolean filled;
@@ -659,11 +630,9 @@ public class BloodBankSystem extends JFrame {
         }
     }
 
-    // =========================================================
-    // MENU BUTTON (home screen tiles)
-    // =========================================================
+   
+  
 
-    /** Large tile-style button used on the home screen, with a title and short subtitle. */
     static class MenuButton extends JPanel {
 
         private boolean hover = false;
@@ -742,16 +711,13 @@ public class BloodBankSystem extends JFrame {
         }
     }
 
-    // =========================================================
-    // MAIN
-    // =========================================================
+    
 
     public static void main(String[] args) {
 
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ignored) {
-            // fall back to the default cross-platform look
         }
 
         SwingUtilities.invokeLater(() -> {
